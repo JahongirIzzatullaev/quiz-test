@@ -3,7 +3,8 @@ let nextBtn = document.getElementById("next-button");
 let countOfQuestion = document.querySelector(".number-of-question");
 let startSection = document.getElementById("start");
 let displaySection = document.getElementById("middle");
-let scoreSection = document.getElementById("finish");
+let finishSection = document.getElementById("finish-section");
+let start = document.getElementById("start-section");
 let userScoreInattention = document.getElementById("user-score-inattention");
 let userScoreImpulsivity = document.getElementById("user-score-impulsivity");
 let progressScoreInattention = document.getElementById("progress-score-inattention");
@@ -27,7 +28,8 @@ nextBtn.addEventListener(
         let passed = `${Math.round((questionCount + 1) / arrayLength * 100)}%`;
         if (questionCount === arrayLength) {
             displaySection.classList.add("hide");
-            scoreSection.classList.remove("hide");
+            finishSection.classList.remove("hide");
+            start.classList.add("hide");
             let passedInattention = `${Math.round(Number(scoreInattention)/maxScore * 100)}%`;
             let passedImpulsivity = `${Math.round(Number(scoreImpulsivity)/maxScore * 100)}%`;
             userScoreInattention.innerHTML =
@@ -36,23 +38,7 @@ nextBtn.addEventListener(
                 scoreImpulsivity + " из "+ maxScore + " баллов в разделе «Импульсивность / гиперактивность»."
             progressBarPassed(progressScoreInattention, passedInattention);
             progressBarPassed(progressScoreImpulsivity, passedImpulsivity);
-            // sendMessageToDevs(name, email, scoreInattention, scoreImpulsivity, maxScore);
-
-            let allScore = Math.round(((scoreInattention + scoreImpulsivity)/(2 * maxScore)) * 100);
-
-            if(allScore < 40){
-                point.style.backgroundColor = "#0FBE3E";
-                point.style.left = `${allScore}%`;
-                point.style.boxShadow = `0 0 13px #0FBE3E`;
-            } else if (allScore > 40 && allScore < 60){
-                point.style.backgroundColor = "#EBFF00";
-                point.style.left = `${allScore}%`;
-                point.style.boxShadow = `0 0 13px #b0be01`;
-            } else {
-                point.style.backgroundColor = "#FA5414"
-                point.style.left = `calc(${allScore}% - 25px)`;
-                point.style.boxShadow = `0 0 13px #d32f2f`;
-            }
+            sendMessageToDevs(name, email, scoreInattention, scoreImpulsivity, maxScore);
         } else {
             countOfQuestion.innerHTML = "Шаг " + (questionCount + 1) + " из " + arrayLength + " - Симптомы невнимательности";
             progressBarPassed(progress, passed);

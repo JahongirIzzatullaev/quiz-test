@@ -4,6 +4,13 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
+/*button {*/
+/*    all: unset;*/
+/*}*/
+
+button:focus {
+    outline: revert;
+}
 body{
     background: linear-gradient(180deg, #182B5F 0%, #27507E 100%);
 }
@@ -38,7 +45,6 @@ body{
     background: linear-gradient(90deg, #21FF4A 5.72%, #0FBE3E 15.1%, #EBFF00 47.92%, #DD1E1D 80.73%, #FA5414 92.71%);
     position: relative;
 }
-
 .liner-progress .point{
     position: absolute;
     width: 25px;
@@ -74,7 +80,6 @@ body{
     left: 0;
     top: -40px;
 }
-
 .liner-progress:after {
     position: absolute;
     content: "Высокая \A вероятность";
@@ -82,8 +87,6 @@ body{
     text-align: right;
     top: -40px;
 }
-
-
 .navbar{
     padding-top: 40px;
 }
@@ -142,7 +145,10 @@ body{
 #next-button{
     margin-top: 20px;
 }
-
+#next-button.disabled{
+    opacity: 0.5;
+    pointer-events: none;
+}
 .start label{
     display: block;
     margin-bottom: 20px;
@@ -150,7 +156,11 @@ body{
 .option-div{
     cursor: pointer;
 }
-
+.option-div.selected{
+    background: linear-gradient(180deg, #FFC200 0%, #FFDC6F 51.04%, #FFC200 100%);
+    color: black;
+    border-color: #FFC200;
+}
 .start input.input-error{
    border-color: #d32f2f;
 }
@@ -205,7 +215,6 @@ body{
     line-height: normal;
     margin-bottom: 24px;
 }
-
 @media (max-width: 639px) {
     .navbar .logo img{
         width: 150px;
@@ -228,3 +237,4 @@ body{
         margin-bottom: 10px;
     }
 }
+
