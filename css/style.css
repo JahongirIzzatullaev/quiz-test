@@ -27,6 +27,7 @@ body{
 }
 .finish{
     min-height: 60vh;
+    padding-bottom: 40px;
 }
 .result-tractor{
     background: #ABD7FF;
