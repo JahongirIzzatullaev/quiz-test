@@ -16,6 +16,7 @@ body{
     min-height: 100vh;
     background-position: -30px 90px;
     background-repeat: no-repeat;
+    padding-bottom: 100px;
 }
 .finish-section {
     background-image: url("../images/finish-bg.svg");
@@ -34,7 +35,7 @@ body{
     display: none;
 }
 .liner-progress{
-    margin-top: 50px;
+    margin-top: 90px;
     width: 100%;
     height: 15px;
     border-radius: 25px;
@@ -71,6 +72,7 @@ body{
     height: 25px;
 }
 .liner-progress:before {
+    color: white;
     position: absolute;
     content: "Низкая \A вероятность";
     left: 0;
@@ -78,6 +80,7 @@ body{
 }
 .liner-progress:after {
     position: absolute;
+    color: white;
     content: "Высокая \A вероятность";
     right: 0;
     text-align: right;
@@ -165,12 +168,12 @@ body{
     color: white;
     width: 100%;
     padding: 12px 15px;
-    margin: 0.3em 0;
     text-align: left;
     outline: none;
     background: transparent;
     border: 1px solid #FFC200;
     border-radius: 0.3em;
+    margin: 5px 0 10px 0;
 }
 .start .politics-text{
     margin-top: 14px;
@@ -259,6 +262,9 @@ body{
     .start-section .title-text, .finish-section .title-text{
         margin-top: 100px;
     }
-
+    .liner-progress:after, .liner-progress:before{
+        white-space: pre-wrap;
+        top: -60px;
+    }
 }
 

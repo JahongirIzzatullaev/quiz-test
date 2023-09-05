@@ -13,6 +13,7 @@ let startButton = document.getElementById("start-button");
 let name = document.getElementById("name");
 let email = document.getElementById("email");
 let progress = document.getElementById("progress");
+let point = document.getElementById("point");
 let questionCount;
 let scoreInattention = 0;
 let scoreImpulsivity = 0;
@@ -41,6 +42,22 @@ nextBtn.addEventListener(
             progressBarPassed(progressScoreInattention, passedInattention);
             progressBarPassed(progressScoreImpulsivity, passedImpulsivity);
             // sendMessageToDevs(name, email, scoreInattention, scoreImpulsivity, maxScore);
+
+            let allScore = Math.round(((scoreInattention + scoreImpulsivity)/(2 * maxScore)) * 100);
+
+            if(scoreImpulsivity >= 18 || scoreInattention >= 18){
+                point.style.backgroundColor = "#FA5414"
+                point.style.left = "calc(100% - 25px)";
+                point.style.boxShadow = `0 0 13px #d32f2f`;
+            } else if (scoreImpulsivity >= 9 || scoreInattention < 9){
+                point.style.backgroundColor = "#EBFF00";
+                point.style.left = "calc(50% - 25px)";
+                point.style.boxShadow = "0 0 13px #b0be01";
+            } else {
+                point.style.backgroundColor = "#0FBE3E";
+                point.style.left = "0";
+                point.style.boxShadow = "0 0 13px #0FBE3E";
+            }
         } else {
             countOfQuestion.innerHTML = "Шаг " + (questionCount + 1) + " из " + arrayLength + " - Симптомы невнимательности";
             progressBarPassed(progress, passed);
