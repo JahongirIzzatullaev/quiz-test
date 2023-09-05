@@ -6,65 +6,167 @@
     <title>Quiz Test</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<section class="start-section">
-    <div class="inner-section">
-        <h4>Самодиагностика симптомов СДВГ</h4>
-        <p>
-            Этот тест используют психиатры при постановке диагноза. <br>
-            В нём 18 вопросов. Введите ФИО и email, чтобы начать тест
-        </p>
-        <label for="name">
-            <div class="mb-8">ФИО*</div>
-            <input id="name" type="email" placeholder="ФИО*" value="Антон Чехов">
-        </label>
-        <label for="email">
-            <div class="mb-8">Электронная почта*</div>
-            <input id="email" type="email" placeholder="Электронная почта*" value="anton@gmail.com">
-        </label>
-        <button id="start-button">Начать тест</button>
-    </div>
-</section>
-
-<section id="display-section" class="display-section">
-    <div class="inner-section">
-        <h4 class="mb-8">Самодиагностика симптомов СДВГ</h4>
-        <span class="number-of-question">Шаг 1 из 18</span>
-        <div class="progress">
-            <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
-        </div>
-        <div id="container"></div>
-        <button id="next-button">Следующий</button>
-    </div>
-</section>
-
-<section class="score-section hide">
-    <div class="inner-section">
-        <h4>Благодарим за прохождение теста!</h4>
-        <div class="alert alert-success">
-            <h6 class="alert-heading">Ваш результат:</h6>
-            <hr>
-            <p id="user-score-inattention">4 из 9 баллов в разделе «Невнимательность».</p>
-            <div class="progress">
-                <div id="progress-score-inattention" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">50%</div>
-            </div>
-            <p id="user-score-impulsivity">1 из 9 баллов в разделе «Импульсивность / гиперактивность»</p>
-            <div class="progress">
-                <div id="progress-score-impulsivity" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">50%</div>
+<section class="start-section" id="start-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 navbar">
+                <div class="logo">
+                    <img src="images/logo.svg" alt="logo">
+                </div>
+                <div>
+                    <ul class="socials">
+                        <li>
+                            <img src="images/telegram.svg" alt="telegram alt">
+                        </li>
+                        <li>
+                            <img src="images/instagram.svg" alt="instagram alt">
+                        </li>
+                        <li>
+                            <img src="images/youtube.svg" alt="youtube alt">
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="liner-progress">
-            <div class="point" id="point">
+        <div id="start" class="start">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="title-text">
+                        Самодиагностика симптомов СДВГ
+                    </h2>
+                    <p>
+                        Этот тест используют психиатры при постановке диагноза.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-6 inner-section">
+                    <p class="inner-title">Чтобы начать тест, введите имя и e-mail</p>
+                    <label for="name">
+                        <input id="name" type="email" placeholder="Ваше имя*" value="Антон Чехов">
+                    </label>
+                    <label for="email">
+                        <input id="email" type="email" placeholder="Ваш e-mail*" value="anton@gmail.com">
+                    </label>
+                    <button id="start-button">Начать тест</button>
+                    <div class="politics-text">
+                        Нажимая на кнопку «Начать тест», я соглашаюсь
+                        с Политикой конфиденциальности
+                    </div>
+                </div>
             </div>
         </div>
-        <button class="btn btn-primary btn-md" id="restart-button">Пройти тест снова</button>
+        <div id="middle" class="middle hide">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="title-text">
+                        Самодиагностика симптомов СДВГ
+                    </h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-8 inner-section">
+                    <span class="number-of-question">
+                        Шаг 1 из 18 - Симптомы невнимательности
+                    </span>
+                    <div class="progress">
+                        <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                    </div>
+                    <div id="container">
+
+                    </div>
+                    <button id="next-button">Далее</button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
-
-<script src="assets/js/store.js"></script>
-<script src="assets/js/utils.js"></script>
-<script src="assets/js/script.js"></script>
+<section class="finish-section hide" id="finish-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 navbar">
+                <div class="logo">
+                    <img src="images/logo.svg" alt="logo">
+                </div>
+                <div>
+                    <ul class="socials">
+                        <li>
+                            <img src="images/telegram.svg" alt="telegram alt">
+                        </li>
+                        <li>
+                            <img src="images/instagram.svg" alt="instagram alt">
+                        </li>
+                        <li>
+                            <img src="images/youtube.svg" alt="youtube alt">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="finish" class="finish ">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="title-text">
+                        А вот и ваши результаты
+                    </h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-6 inner-section">
+                    <p class="inner-title">
+                        Благодарим за прохождение теста!
+                    </p>
+                    <p id="user-score-inattention">4 из 9 баллов в разделе «Невнимательность».</p>
+                    <div class="progress">
+                        <div id="progress-score-inattention" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">50%</div>
+                    </div>
+                    <p id="user-score-impulsivity">1 из 9 баллов в разделе «Импульсивность / гиперактивность»</p>
+                    <div class="progress">
+                        <div id="progress-score-impulsivity" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%">50%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="result-tractor">
+        <div class="container">
+           <div class="row justify-content-center">
+               <div class="col-sm-12 col-md-8">
+                   <h1>
+                       Как трактовать результаты?
+                   </h1>
+                   <ol>
+                       <li>Если у вас 18 и более баллов в любом из разделов — вы можете подозревать у себя СДВГ.</li>
+                       <li>Если у вас 18 и более баллов в разделе «Невнимательность»  меньше 18 баллов в разделе «Импульсивность / гиперактивность» — вы можете подозревать т.н. невнимательный тип СДВГ.</li>
+                       <li>Если у вас 18 и более баллов в разделе «Импульсивность / гиперактивность» и меньше 6 баллов в разделе «Невнимательность» — вы можете подозревать т.н. гиперактивный тип СДВГ.</li>
+                       <li>Если у вас в каждом из разделов 18 и более баллов — вы можете подозревать т.н. смешанный тип СДВГ.</li>
+                   </ol>
+               </div>
+               <div class="col-sm-12 col-md-8">
+                   <h1>
+                       Ещё несколько важных тезисов, которые стоит учитывать
+                   </h1>
+                   <ol>
+                       <li>
+                           Как минимум некоторые симптомы присутствовали у вас до 12 лет и продолжились во взрослом возрасте.
+                       </li>
+                       <li>
+                           Симптомы обязательно проявляются в двух и более сферах жизни (например, семья и работа или учёба и работа).
+                       </li>
+                       <li>
+                           Симптомы не проявляются и не объясняются лучше другим расстройством (например, депрессией, тревожным расстройством, диссоциативным расстройством или расстройством личности).
+                       </li>
+                   </ol>
+               </div>
+           </div>
+        </div>
+    </div>
+</section>
+<script src="./js/store.js"></script>
+<script src="./js/utils.js"></script>
+<script src="./js/script.js"></script>
 </body>
 </html>

@@ -16,7 +16,9 @@ let progress = document.getElementById("progress");
 let questionCount;
 let scoreInattention = 0;
 let scoreImpulsivity = 0;
-let arrayLength = quizArray.length
+let arrayLength = quizArray.length;
+let selectedScore = 0;
+let selectedType;
 
 nextBtn.addEventListener(
     "click",
@@ -25,6 +27,7 @@ nextBtn.addEventListener(
         nextBtn.classList.add('disabled');
         let maxScore = (arrayLength / 2) * 3;
         let passed = `${Math.round((questionCount + 1) / arrayLength * 100)}%`;
+        selectedType === "inattention" ? scoreInattention += selectedScore : scoreImpulsivity += selectedScore;
         if (questionCount === arrayLength) {
             displaySection.classList.add("hide");
             finishSection.classList.remove("hide");
@@ -37,7 +40,7 @@ nextBtn.addEventListener(
                 scoreImpulsivity + " из "+ maxScore + " баллов в разделе «Импульсивность / гиперактивность»."
             progressBarPassed(progressScoreInattention, passedInattention);
             progressBarPassed(progressScoreImpulsivity, passedImpulsivity);
-            sendMessageToDevs(name, email, scoreInattention, scoreImpulsivity, maxScore);
+            // sendMessageToDevs(name, email, scoreInattention, scoreImpulsivity, maxScore);
         } else {
             countOfQuestion.innerHTML = "Шаг " + (questionCount + 1) + " из " + arrayLength + " - Симптомы невнимательности";
             progressBarPassed(progress, passed);
@@ -82,7 +85,8 @@ const quizCreator = () => {
 const checker = (userOption, question_type, score) =>{
     let question = document.getElementsByClassName("container-mid")[questionCount];
     let options = question.querySelectorAll(".option-div");
-    question_type === "inattention" ? scoreInattention += score : scoreImpulsivity += score;
+    selectedType = question_type;
+    selectedScore = score;
 
     userOption.classList.add("selected");
     nextBtn.classList.remove("disabled");
