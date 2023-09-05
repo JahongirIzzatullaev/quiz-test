@@ -13,7 +13,6 @@ let startButton = document.getElementById("start-button");
 let name = document.getElementById("name");
 let email = document.getElementById("email");
 let progress = document.getElementById("progress");
-let point = document.getElementById("point");
 let questionCount;
 let scoreInattention = 0;
 let scoreImpulsivity = 0;

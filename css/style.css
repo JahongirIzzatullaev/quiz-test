@@ -4,10 +4,6 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
-/*button {*/
-/*    all: unset;*/
-/*}*/
-
 button:focus {
     outline: revert;
 }
@@ -184,6 +180,7 @@ body{
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+    text-align: center;
 }
 #user-score-impulsivity{
     margin-top: 40px;
@@ -216,25 +213,49 @@ body{
     margin-bottom: 24px;
 }
 @media (max-width: 639px) {
+    .start-section{
+        background-image: url("../images/mobile-bg.svg");
+    }
     .navbar .logo img{
         width: 150px;
     }
     .socials img{
         width: 30px;
     }
-    .liner-progress:after, .liner-progress:before{
-        white-space: pre-wrap;
-        top: -60px;
+    #start-button, #next-button{
+        font-size: 16px;
+    }
+    .start input, .option-div{
+        font-size: 14px;
+        padding: 10px 15px;
     }
     .title-text{
         font-size: 22px;
     }
+    .result-tractor h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .question{
+        margin: 20px 0 10px 0;
+    }
     .start p, .question{
         font-size: 16px;
+    }
+    .start .politics-text{
+        font-size: 14px;
     }
     .inner-section .inner-title{
         font-size: 14px;
         margin-bottom: 10px;
     }
+    .result-tractor ol{
+        padding: 0 0 20px 15px;
+    }
+    .result-tractor ol li{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
 }
 
