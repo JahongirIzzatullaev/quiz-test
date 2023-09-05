@@ -86,10 +86,8 @@ button {
 .hide {
     display: none;
 }
-.correct {
-    background-color: #e7f6d5;
-    color: #689f38;
-    border-color: #689f38;
+.selected {
+    background-color: #c6deff;
 }
 input.input-error{
     border-color: #d32f2f;;
@@ -99,3 +97,43 @@ input.input-error{
     height: 25px;
 }
 
+.liner-progress{
+    margin-top: 50px;
+    width: 100%;
+    height: 15px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #21FF4A 5.72%, #0FBE3E 15.1%, #EBFF00 47.92%, #DD1E1D 80.73%, #FA5414 92.71%);
+    position: relative;
+}
+
+.liner-progress .point{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #d32f2f;
+    border-radius: 50%;
+    top: -5px;
+    box-shadow: 0 0 15px #d32f2f;
+}
+
+.liner-progress:before {
+    position: absolute;
+    content: "Низкая \A вероятность";
+    left: 0;
+    top: -40px;
+}
+
+.liner-progress:after {
+    position: absolute;
+    content: "Высокая \A вероятность";
+    right: 0;
+    text-align: right;
+    top: -40px;
+}
+
+@media screen and (max-width: 480px) {
+    .liner-progress:after, .liner-progress:before{
+        white-space: pre-wrap;
+        top: -60px;
+    }
+}

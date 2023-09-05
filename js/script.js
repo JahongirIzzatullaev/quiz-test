@@ -1,14 +1,13 @@
 let quizContainer = document.getElementById("container");
 let nextBtn = document.getElementById("next-button");
 let countOfQuestion = document.querySelector(".number-of-question");
-let displaySection = document.getElementById("display-section");
-let scoreSection = document.querySelector(".score-section");
-let restartBtn = document.getElementById("restart-button");
+let startSection = document.getElementById("start");
+let displaySection = document.getElementById("middle");
+let scoreSection = document.getElementById("finish");
 let userScoreInattention = document.getElementById("user-score-inattention");
 let userScoreImpulsivity = document.getElementById("user-score-impulsivity");
 let progressScoreInattention = document.getElementById("progress-score-inattention");
 let progressScoreImpulsivity = document.getElementById("progress-score-impulsivity");
-let startSection = document.querySelector(".start-section");
 let startButton = document.getElementById("start-button");
 let name = document.getElementById("name");
 let email = document.getElementById("email");
@@ -18,12 +17,6 @@ let questionCount;
 let scoreInattention = 0;
 let scoreImpulsivity = 0;
 let arrayLength = quizArray.length
-
-restartBtn.addEventListener("click", () => {
-    initial();
-    displaySection.classList.remove("hide");
-    scoreSection.classList.add("hide");
-});
 
 nextBtn.addEventListener(
     "click",
@@ -61,7 +54,7 @@ nextBtn.addEventListener(
                 point.style.boxShadow = `0 0 13px #d32f2f`;
             }
         } else {
-            countOfQuestion.innerHTML = "Шаг " + (questionCount + 1) + " из " + arrayLength;
+            countOfQuestion.innerHTML = "Шаг " + (questionCount + 1) + " из " + arrayLength + " - Симптомы невнимательности";
             progressBarPassed(progress, passed);
             quizDisplay(questionCount);
         }
@@ -83,7 +76,7 @@ const quizCreator = () => {
         div.classList.add("container-mid", "hide");
         nextBtn.classList.add("disabled");
 
-        countOfQuestion.innerHTML = "Шаг " + 1 + " из " + arrayLength;
+        countOfQuestion.innerHTML = "Шаг " + 1 + " из " + arrayLength + " - Симптомы невнимательности";
         let passed = `${Math.round(1 / arrayLength * 100)}%`;
         progressBarPassed(progress, passed);
 
@@ -138,13 +131,8 @@ startButton.addEventListener("click", () => {
     } else{
         name.classList.remove("input-error");
         email.classList.remove("input-error");
-        startSection.classList.add("hide");
         displaySection.classList.remove("hide");
+        startSection.classList.add("hide");
         initial();
     }
 });
-
-window.onload = () => {
-    startSection.classList.remove("hide");
-    displaySection.classList.add("hide");
-};

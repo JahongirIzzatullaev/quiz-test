@@ -1,0 +1,230 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+body{
+    background: linear-gradient(180deg, #182B5F 0%, #27507E 100%);
+}
+.start-section {
+    background-image: url("../images/start-bg.svg");
+    background-size: contain;
+    min-height: 100vh;
+    background-position: -30px 90px;
+    background-repeat: no-repeat;
+}
+.finish-section {
+    background-image: url("../images/finish-bg.svg");
+    background-size: contain;
+    min-height: 100vh;
+    background-position: -30px 90px;
+    background-repeat: no-repeat;
+}
+.finish{
+    min-height: 60vh;
+}
+.result-tractor{
+    background: #ABD7FF;
+}
+.hide {
+    display: none;
+}
+.liner-progress{
+    margin-top: 50px;
+    width: 100%;
+    height: 15px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #21FF4A 5.72%, #0FBE3E 15.1%, #EBFF00 47.92%, #DD1E1D 80.73%, #FA5414 92.71%);
+    position: relative;
+}
+
+.liner-progress .point{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #d32f2f;
+    border-radius: 50%;
+    top: -5px;
+    box-shadow: 0 0 15px #d32f2f;
+}
+.number-of-question{
+    color: #FFD960;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 8px;
+    display: block;
+}
+.question{
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 30px 0 20px 0;
+}
+.progress{
+    height: 25px;
+}
+.liner-progress:before {
+    position: absolute;
+    content: "Низкая \A вероятность";
+    left: 0;
+    top: -40px;
+}
+
+.liner-progress:after {
+    position: absolute;
+    content: "Высокая \A вероятность";
+    right: 0;
+    text-align: right;
+    top: -40px;
+}
+
+
+.navbar{
+    padding-top: 40px;
+}
+.socials {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.socials li{
+    cursor: pointer;
+    margin-left: 12px;
+}
+.title-text{
+    margin-top: 30px;
+    color: #FFF;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: normal;
+}
+.start p{
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.inner-section .inner-title{
+    color: #FFC200;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 40px;
+    display: block;
+}
+.inner-section label, .inner-section button, .inner-section input{
+    display: block;
+    width: 100%;
+}
+#start-button, #next-button{
+    border-radius: 6px;
+    background: linear-gradient(180deg, #FFC200 0%, #FFDC6F 51.04%, #FFC200 100%);
+    padding: 12px 0;
+    color: #193254;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#next-button{
+    margin-top: 20px;
+}
+
+.start label{
+    display: block;
+    margin-bottom: 20px;
+}
+.option-div{
+    cursor: pointer;
+}
+
+.start input.input-error{
+   border-color: #d32f2f;
+}
+.start input, .option-div{
+    font-size: 16px;
+    color: white;
+    width: 100%;
+    padding: 12px 15px;
+    margin: 0.3em 0;
+    text-align: left;
+    outline: none;
+    background: transparent;
+    border: 1px solid #FFC200;
+    border-radius: 0.3em;
+}
+.start .politics-text{
+    margin-top: 14px;
+    display: block;
+    color: #6E86A6;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+#user-score-impulsivity{
+    margin-top: 40px;
+}
+#user-score-impulsivity, #user-score-inattention{
+    color: white;
+    font-size: 18px;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.result-tractor h1{
+    margin: 50px 0;
+    color: #16457F;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: normal;
+}
+.result-tractor ol{
+    -webkit-padding-start: 0;
+    margin-block-start: 0;
+    border-bottom: 1px solid #FFF;
+    padding-bottom: 40px;
+}
+.result-tractor ol li{
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 639px) {
+    .navbar .logo img{
+        width: 150px;
+    }
+    .socials img{
+        width: 30px;
+    }
+    .liner-progress:after, .liner-progress:before{
+        white-space: pre-wrap;
+        top: -60px;
+    }
+    .title-text{
+        font-size: 22px;
+    }
+    .start p, .question{
+        font-size: 16px;
+    }
+    .inner-section .inner-title{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
