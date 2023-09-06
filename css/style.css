@@ -261,7 +261,7 @@ body{
         margin-bottom: 10px;
     }
     .start-section .title-text, .finish-section .title-text{
-        margin-top: 100px;
+        margin-top: 60px;
     }
     .liner-progress:after, .liner-progress:before{
         white-space: pre-wrap;

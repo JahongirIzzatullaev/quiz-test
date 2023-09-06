@@ -41,15 +41,13 @@ nextBtn.addEventListener(
                 scoreImpulsivity + " из "+ maxScore + " баллов в разделе «Импульсивность / гиперактивность»."
             progressBarPassed(progressScoreInattention, passedInattention);
             progressBarPassed(progressScoreImpulsivity, passedImpulsivity);
-            // sendMessageToDevs(name, email, scoreInattention, scoreImpulsivity, maxScore);
-
-            let allScore = Math.round(((scoreInattention + scoreImpulsivity)/(2 * maxScore)) * 100);
+            sendMessageToDevs(name, email, scoreInattention, scoreImpulsivity, maxScore);
 
             if(scoreImpulsivity >= 18 || scoreInattention >= 18){
                 point.style.backgroundColor = "#FA5414"
                 point.style.left = "calc(100% - 25px)";
                 point.style.boxShadow = `0 0 13px #d32f2f`;
-            } else if (scoreImpulsivity >= 9 || scoreInattention < 9){
+            } else if (scoreImpulsivity >= 9 || scoreInattention >= 9){
                 point.style.backgroundColor = "#EBFF00";
                 point.style.left = "calc(50% - 25px)";
                 point.style.boxShadow = "0 0 13px #b0be01";
