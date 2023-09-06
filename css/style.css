@@ -281,5 +281,8 @@ body{
         white-space: pre-wrap;
         top: -60px;
     }
+    .finish-section{
+        background-image: none;
+    }
 }
 
