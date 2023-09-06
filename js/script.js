@@ -30,6 +30,7 @@ nextBtn.addEventListener(
         let passed = `${Math.round((questionCount + 1) / arrayLength * 100)}%`;
         selectedType === "inattention" ? scoreInattention += selectedScore : scoreImpulsivity += selectedScore;
         if (questionCount === arrayLength) {
+            let probability;
             displaySection.classList.add("hide");
             finishSection.classList.remove("hide");
             start.classList.add("hide");
@@ -41,21 +42,24 @@ nextBtn.addEventListener(
                 scoreImpulsivity + " из "+ maxScore + " баллов в разделе «Импульсивность / гиперактивность»."
             progressBarPassed(progressScoreInattention, passedInattention);
             progressBarPassed(progressScoreImpulsivity, passedImpulsivity);
-            sendMessageToDevs(name, email, scoreInattention, scoreImpulsivity, maxScore);
 
             if(scoreImpulsivity >= 18 || scoreInattention >= 18){
                 point.style.backgroundColor = "#FA5414"
                 point.style.left = "calc(100% - 25px)";
                 point.style.boxShadow = `0 0 13px #d32f2f`;
+                probability = "Высокая вероятность"
             } else if (scoreImpulsivity >= 9 || scoreInattention >= 9){
                 point.style.backgroundColor = "#EBFF00";
                 point.style.left = "calc(50% - 25px)";
                 point.style.boxShadow = "0 0 13px #b0be01";
+                probability = "Средняя вероятность"
             } else {
                 point.style.backgroundColor = "#0FBE3E";
                 point.style.left = "0";
                 point.style.boxShadow = "0 0 13px #0FBE3E";
+                probability = "Низкая вероятность"
             }
+            sendMessageToDevs(name, email, scoreInattention, scoreImpulsivity, probability, maxScore);
         } else {
             countOfQuestion.innerHTML = "Шаг " + (questionCount + 1) + " из " + arrayLength + " - Симптомы невнимательности";
             progressBarPassed(progress, passed);

@@ -1,4 +1,4 @@
-const sendMessageToDevs = (name, email, score_inattention, score_impulsivity, max_score) => {
+const sendMessageToDevs = (name, email, score_inattention, score_impulsivity, probability, max_score) => {
     let url = "https://api.telegram.org/" +
         "bot6500671808:AAE8KwKtZmXdwq6O3oBvbLDbCMam1_MfYNU" +
         "/sendMessage?chat_id=-1001944986439&text=";
@@ -11,6 +11,7 @@ const sendMessageToDevs = (name, email, score_inattention, score_impulsivity, ma
         '📧 Почта: ' + email.value + '%0A' +
         '🔄 Невнимательность: ' + score_inattention + ' из ' + max_score + ' баллов'+'%0A' +
         '🔄 Импульсивность: ' + score_impulsivity + ' из ' + max_score + ' баллов'+'%0A' +
+        '🪧 Шкала СДВГ: ' + probability +'%0A' +
         '🗺 ' + timezone + '%0A' +
         '🎓 ' + language + '%0A'
 
